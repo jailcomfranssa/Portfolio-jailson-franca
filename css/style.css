@@ -3,7 +3,7 @@
 body {
 
     background: linear-gradient(to right, #0d94a4, #b201c0) !important;
-    color: #0E144E !important;
+    color: #333 !important;
 
 }
 
@@ -386,6 +386,7 @@ nav a:focus {
 }
 
 .card {
+    background-color: #ffd7 !important;
     border-radius: 11px;
     box-shadow: 0 3px 10px #B201C0;
 }
@@ -457,7 +458,7 @@ nav a:focus {
 
 .panels {
 
-    background: #fffffff6;
+    background: #ffd7;
     min-height: 260px;
     width: 100%;
     border-radius: 3px;
@@ -525,7 +526,6 @@ nav a:focus {
 
 .slide img {
     width: 100%;
-    padding: 0.2rem;
 }
 
 
