@@ -391,7 +391,7 @@ nav a:focus {
     box-shadow: 0 3px 10px #B201C0;
 }
 
-.img-eu{
+.img-eu {
     width: 20rem;
     height: 25rem;
     padding: 37px;
@@ -636,7 +636,7 @@ footer {
     justify-content: end;
     align-content: end;
     min-height: 60vh;
-    background-color: #e8e8e8;
+    background-color: #ffd7;
     padding: 50px;
 }
 
@@ -695,6 +695,11 @@ footer .container-footer .sci li a i {
 
 }
 
+footer .sci li:hover {
+    transform: scale(1.2);
+}
+
+
 footer .container-footer .quicklinks {
     position: relative;
 }
@@ -710,6 +715,16 @@ footer .container-footer .quicklinks ul li a {
     margin-bottom: 10px;
     display: inline-block;
 }
+
+footer .container-footer .quicklinks ul li a:hover{
+    transform: scale(1.2);
+}
+
+footer .container-footer .quicklinks  a:hover{
+    color: #50e6ec;
+}
+
+
 
 footer .container-footer .contact .info {
     position: relative;
@@ -767,7 +782,7 @@ footer .ul-info li {
     padding: 2rem;
 }
 
-#socials-container img{
+#socials-container img {
     width: 2.5rem;
     transition: transform 0.3s;
 }
@@ -782,42 +797,48 @@ footer .ul-info li {
     position: relative;
     overflow: hidden;
     border: 1px solid #ccc;
-    transition: transform 0.2s ease; /* Adiciona uma transição suave para a transformação */
+    transition: transform 0.2s ease;
+    /* Adiciona uma transição suave para a transformação */
 }
 
 .card-efeito:hover {
-    transform: scale(1.05); /* Aumenta o card em 5% quando o mouse passar por cima */
+    transform: scale(1.05);
+    /* Aumenta o card em 5% quando o mouse passar por cima */
 }
 
 .card-efeito img {
     width: 100%;
     padding: 0.2rem;
-    transition: transform 0.2s ease; /* Adiciona uma transição suave para a transformação da imagem */
+    transition: transform 0.2s ease;
+    /* Adiciona uma transição suave para a transformação da imagem */
 }
 
 .card-efeito:hover img {
-    transform: scale(1.1); /* Aumenta a imagem em 10% quando o mouse passar por cima do card */
+    transform: scale(1.1);
+    /* Aumenta a imagem em 10% quando o mouse passar por cima do card */
 }
 
 .card-efeito p a {
     display: none;
     background-color: rgb(40, 205, 208);
     color: #333;
-    font-weight:800;
+    font-weight: 800;
     position: absolute;
     bottom: 0;
     left: 0;
     padding: 5px;
-    transition: opacity 0.2s ease; /* Adiciona uma transição suave para a opacidade do link */
+    transition: opacity 0.2s ease;
+    /* Adiciona uma transição suave para a opacidade do link */
     width: 100%;
 }
 
 .card-efeito:hover p a {
     display: block;
-    opacity: 1; /* Torna o link visível quando o mouse passar por cima do card */
+    opacity: 1;
+    /* Torna o link visível quando o mouse passar por cima do card */
 }
 
-.card-efeito p{
+.card-efeito p {
     margin-bottom: 0;
 }
 
@@ -839,11 +860,11 @@ footer .ul-info li {
 
     }
 
-     /*Footer*/
-     footer .container-footer .sci {
+    /*Footer*/
+    footer .container-footer .sci {
         margin-top: 20px;
         display: grid;
-        grid-template-columns: repeat(4,50px);
+        grid-template-columns: repeat(4, 50px);
         padding: 1rem;
         justify-items: center;
         justify-content: space-evenly;
@@ -852,17 +873,18 @@ footer .ul-info li {
     footer .container-footer {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-gap: 20px;
         text-align: center;
         padding: 2px;
     }
 
-    footer ol, ul {
+    footer ol,
+    ul {
         padding-left: 0rem !important;
     }
 
-    
+
 
     .copyrightText {
         width: 100%;
@@ -888,7 +910,3 @@ footer .ul-info li {
     }
 
 }
-
-
-
-
