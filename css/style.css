@@ -800,7 +800,7 @@ footer .ul-info li {
     transform: scale(1.2);
 }
 
-/************************************************/
+/****************** Efeito card curso******************************/
 
 .card-efeito {
     position: relative;
@@ -825,8 +825,9 @@ footer .ul-info li {
 
 .card-efeito p a {
     display: none;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    background-color: rgb(40, 205, 208);
+    color: #333;
+    font-weight:800;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -838,6 +839,10 @@ footer .ul-info li {
 .card-efeito:hover p a {
     display: block;
     opacity: 1; /* Torna o link visível quando o mouse passar por cima do card */
+}
+
+.card-efeito p{
+    margin-bottom: 0;
 }
 
 
