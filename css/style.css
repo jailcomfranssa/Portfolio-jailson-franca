@@ -385,10 +385,18 @@ nav a:focus {
     margin-bottom: 2rem;
 }
 
+.card-front:hover,
+.card-back:hover,
+.card-qa:hover {
+    transform: translateY(-5px); /* Levanta o card quando o mouse passar por cima */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
 .card {
     background-color: #ffd7 !important;
     border-radius: 11px;
     box-shadow: 0 3px 10px #B201C0;
+    cursor: default;
 }
 
 .img-eu {
@@ -397,6 +405,22 @@ nav a:focus {
     padding: 37px;
     border-radius: 15%;
 }
+
+.linha{
+    border-top: solid #B201C0 5px;
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+/*experiencias*/
+
+#experiencias .card:hover {
+    transform: translateY(-5px); /* Levanta o card quando o mouse passar por cima */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Aumenta a sombra no hover para um efeito mais perceptível */
+}
+
+
+
 
 /*Skill       height: 134px;*/
 
