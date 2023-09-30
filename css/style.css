@@ -755,30 +755,6 @@ footer .ul-info li {
 
 
 
-@media(max-width: 768px) {
-    .menu-hamburguer {
-        display: block;
-    }
-
-
-    .menu-descktop {
-        display: none;
-
-    }
-}
-
-@media(max-width: 600px) {
-
-    .card-front,
-    .card-back,
-    .card-qa {
-        border-radius: 11px;
-        box-shadow: 0 3px 10px #B201C0;
-        width: 100% !important;
-        margin-bottom: 2rem;
-    }
-
-}
 
 /*Icon-redSocial*/
 
@@ -843,6 +819,74 @@ footer .ul-info li {
 
 .card-efeito p{
     margin-bottom: 0;
+}
+
+
+
+
+/*##############*/
+
+
+
+@media(max-width: 768px) {
+    .menu-hamburguer {
+        display: block;
+    }
+
+
+    .menu-descktop {
+        display: none;
+
+    }
+
+     /*Footer*/
+     footer .container-footer .sci {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(4,50px);
+        padding: 1rem;
+        justify-items: center;
+        justify-content: space-evenly;
+    }
+
+    footer .container-footer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 20px;
+        text-align: center;
+        padding: 2px;
+    }
+
+    footer ol, ul {
+        padding-left: 0rem !important;
+    }
+
+    
+
+    .copyrightText {
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        color: #555;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        margin-left: 3px;
+    }
+}
+
+
+
+@media(max-width: 600px) {
+
+    .card-front,
+    .card-back,
+    .card-qa {
+        border-radius: 11px;
+        box-shadow: 0 3px 10px #B201C0;
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+
 }
 
 
