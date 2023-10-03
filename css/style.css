@@ -388,7 +388,8 @@ nav a:focus {
 .card-front:hover,
 .card-back:hover,
 .card-qa:hover {
-    transform: translateY(-5px); /* Levanta o card quando o mouse passar por cima */
+    transform: translateY(-5px);
+    /* Levanta o card quando o mouse passar por cima */
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -406,7 +407,7 @@ nav a:focus {
     border-radius: 15%;
 }
 
-.linha{
+.linha {
     border-top: solid #B201C0 5px;
     width: 40px;
     margin-bottom: 10px;
@@ -415,8 +416,10 @@ nav a:focus {
 /*experiencias*/
 
 #experiencias .card:hover {
-    transform: translateY(-5px); /* Levanta o card quando o mouse passar por cima */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Aumenta a sombra no hover para um efeito mais perceptível */
+    transform: translateY(-5px);
+    /* Levanta o card quando o mouse passar por cima */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    /* Aumenta a sombra no hover para um efeito mais perceptível */
 }
 
 
@@ -740,11 +743,11 @@ footer .container-footer .quicklinks ul li a {
     display: inline-block;
 }
 
-footer .container-footer .quicklinks ul li a:hover{
+footer .container-footer .quicklinks ul li a:hover {
     transform: scale(1.2);
 }
 
-footer .container-footer .quicklinks  a:hover{
+footer .container-footer .quicklinks a:hover {
     color: #50e6ec;
 }
 
@@ -865,6 +868,92 @@ footer .ul-info li {
 .card-efeito p {
     margin-bottom: 0;
 }
+
+.card-text-hover img {
+    width: 48px;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+/*card de cursos*/
+.card-text-hover {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    box-shadow: 0 0 0 5px #ffffff80;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+
+}
+
+.card-text-hover img {
+    width: 100%;
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-text-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow-y: auto;
+}
+
+.card-text-hover:hover .card__content {
+    transform: rotateX(0deg);
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+
+.card-text-hover:hover img {
+    scale: 0;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.card__description i {
+    font-size: 1.7rem;
+    margin-right: 13px;
+    margin-top: 10px;
+    transition: transform 0.2s ease;
+
+}
+
+.card__description i:hover {
+    transform: scale(1.1);
+}
+
 
 
 
