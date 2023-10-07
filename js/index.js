@@ -265,3 +265,6 @@ const listAll = document.querySelectorAll('.row-cols-1.row-cols-md-3.g-4 .col');
         });
     }
 })();
+
+
+

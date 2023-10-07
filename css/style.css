@@ -870,7 +870,7 @@ footer .ul-info li {
 }
 
 .card-text-hover img {
-    width: 48px;
+    
     fill: #333;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -878,30 +878,26 @@ footer .ul-info li {
 
 /*card de cursos*/
 .card-text-hover {
-    position: relative;
-    width: 100%;
-    height: auto;
-    background-color: #f2f2f2;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
+    
+    
+
     overflow: hidden;
     perspective: 1000px;
-    box-shadow: 0 0 0 5px #ffffff80;
+    
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
 
 }
 
 .card-text-hover img {
-    width: 100%;
-    fill: #333;
+    
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
 }
 
 .card-text-hover:hover {
-    transform: scale(1.05);
+    transform: scale(1.0);
     box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
@@ -945,13 +941,13 @@ footer .ul-info li {
 .card__description i {
     font-size: 1.7rem;
     margin-right: 13px;
-    margin-top: 10px;
+    margin-top: 20px;
     transition: transform 0.2s ease;
 
 }
 
 .card__description i:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
 }
 
 
@@ -959,6 +955,11 @@ footer .ul-info li {
 
 
 /*##############*/
+
+
+
+
+
 
 
 
@@ -1023,3 +1024,33 @@ footer .ul-info li {
     }
 
 }
+
+
+
+
+
+.gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
+    padding: 0 2vw;
+}
+.gallery-items{
+    width: 340px;
+    height: 340px;
+    border: 10px solid #FFF;
+    box-shadow: 5px 5px 5px #0006;
+    flex-grow: 1;
+    transition: transform .5s linear;
+}
+.gallery-items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-items:hover{
+    transform: scale(1.1);
+}
+
