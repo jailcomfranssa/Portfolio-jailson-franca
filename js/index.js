@@ -189,42 +189,40 @@ showSlides4();
 /**######################################### */
 /*projtos */
 const listAll = document.querySelectorAll('.row-cols-1.row-cols-md-3.g-4 .col');
-        const buttonGeral = document.querySelectorAll('#menu-desktop li');
+const buttonGeral = document.querySelectorAll('#menu-desktop li');
 
-        function removeClick(index) {
-            buttonGeral.forEach((item) => {
-                item.classList.remove('ativo');
-            });
-            buttonGeral[index].classList.add('ativo');
+function removeClick(index) {
+    buttonGeral.forEach((item) => {
+        item.classList.remove('ativo');
+    });
+    buttonGeral[index].classList.add('ativo');
+}
+
+buttonGeral.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        removeClick(index);
+        filterProjects(item.classList[0]);
+    });
+});
+
+function filterProjects(category) {
+    listAll.forEach((item) => {
+        item.style.display = 'none';
+        if (category === 'todos' || item.id === category) {
+            item.style.display = 'block';
         }
-
-        buttonGeral.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                removeClick(index);
-                filterProjects(item.classList[0]);
-            });
-        });
-
-        function filterProjects(category) {
-            listAll.forEach((item) => {
-                item.style.display = 'none';
-                if (category === 'todos' || item.id === category) {
-                    item.style.display = 'block';
-                }
-            });
-        }
+    });
+}
 
 
 
 /**######################################### */
 
 /**Formulario */
-
-// Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     var alertPlaceholder = document.getElementById('liveAlertPlaceholder');
     var alertTrigger = document.getElementById('liveAlertBtn');
-    'use strict';
+    var form = document.querySelector('.needs-validation');
 
     // Função para exibir alertas
     function showAlert(message, type) {
@@ -232,37 +230,82 @@ const listAll = document.querySelectorAll('.row-cols-1.row-cols-md-3.g-4 .col');
         wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
         alertPlaceholder.innerHTML = ''; // Limpar alertas anteriores
         alertPlaceholder.appendChild(wrapper);
-         // Definir um temporizador para remover o alerta após 30 segundos (30000 milissegundos)
+        // Definir um temporizador para remover o alerta após 30 segundos (30000 milissegundos)
         setTimeout(function () {
             alertPlaceholder.innerHTML = ''; // Remover o alerta após 30 segundos
         }, 3000);
     }
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation');
+    // Pega os valores dos campos do formulário
+    function getFormValues() {
+        return {
+            nome: document.getElementById("validationCustomUsername").value,
+            email: document.getElementById("validationCustomEmail").value,
+            assunto: document.getElementById("validationCustomAssunto").value,
+            mensagem: document.getElementById("floatingTextarea").value
+        };
+    }
 
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-
-                    showAlert('Por favor, preencha todos os campos corretamente!', 'danger');
-                } else {
-                    showAlert('Mensagem enviada com sucesso!', 'success');
-                }
-
-                form.classList.add('was-validated');
-            }, false);
+    // Limpar os campos do formulário
+    function clearFormFields() {
+        var formFields = document.querySelectorAll('.form-control');
+        formFields.forEach(function (field) {
+            field.value = "";
         });
+    }
+
+    // Enviar email
+    function enviarEmail() {
+        var values = getFormValues();
+
+        if (values.nome === "" || values.email === "" || values.assunto === "" || values.mensagem === "") {
+            showAlert('Por favor, preencha todos os campos corretamente!', 'danger');
+            return;
+        }
+
+        var params = {
+            to_email: values.email,
+            from_name: values.nome,
+            message: ['Assunto: ' + values.assunto, '\nE-mail destinatário: ' + values.email, '\nMensagem: ' + values.mensagem]
+        };
+
+        // Inicialize o Email.js com seu User ID (caso não tenha feito isso antes)
+        emailjs.init("p2DwVFdT3_LYmFEUk");
+
+        // Use a função send para enviar o email
+        emailjs.send("service_86ehkth", "template_gvxzxg8", params)
+            .then(function (response) {
+                console.log("Email enviado com sucesso!", response);
+                clearFormFields();
+                form.classList.remove('was-validated'); // Remover a validação do formulário
+                showAlert("Email enviado com sucesso!", "success");
+            })
+            .catch(function (error) {
+                console.error("Erro ao enviar o email:", error);
+                showAlert("Erro ao enviar o email. Por favor, tente novamente mais tarde.", "danger");
+            });
+    }
 
     // Adicione um evento de clique ao botão de alerta, se necessário
     if (alertTrigger) {
         alertTrigger.addEventListener('click', function () {
             showAlert('Nice, you triggered this alert message!', 'success');
         });
+    }
+
+    // Adicionar evento de envio do formulário
+    if (form) {
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+                showAlert('Por favor, preencha todos os campos corretamente!', 'danger');
+            } else {
+                showAlert('Mensagem enviada com sucesso!', 'success');
+                enviarEmail();
+            }
+            form.classList.add('was-validated');
+        }, false);
     }
 })();
 
