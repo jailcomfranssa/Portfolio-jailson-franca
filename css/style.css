@@ -562,7 +562,7 @@ nav a:focus {
 }
 
 .slider-btn button {
-    background-color: #007BFF;
+    background-color: #28ccd0;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -586,7 +586,7 @@ nav a:focus {
 }
 
 .bullet.active {
-    background-color: #007BFF;
+    background-color: #28ccd0;
 }
 
 .img-curso {
